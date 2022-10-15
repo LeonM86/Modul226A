@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/ch/csbe/modul226A/Bank.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ch/csbe/modul226A/Konto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ch/csbe/modul226A/Kunde.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ch/csbe/modul226A/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ch/csbe/modul226A/TestKonto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../Modul404/Leon_Mueller_LB2/MathOperationsTesting/src/main/java/Addition.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../Modul404/MathOperationsTesting/src/main/java/Multiplikation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../Modul404/MathOperationsTesting/src/test/java/DivisionTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../Modul404/MathOperationsTesting/src/test/java/MultiplikationTest.java" charset="UTF-8" />
+    <file url="PROJECT" charset="ISO-8859-15" />
+  </component>
+</project>
