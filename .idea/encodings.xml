@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/../../../../Modul404/MathOperationsTesting/src/main/java/Multiplikation.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../../../Modul404/MathOperationsTesting/src/test/java/DivisionTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../../../Modul404/MathOperationsTesting/src/test/java/MultiplikationTest.java" charset="UTF-8" />
+    <file url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/org/junit/jupiter/api/Assertions.class" charset="UTF-16BE" />
     <file url="PROJECT" charset="ISO-8859-15" />
   </component>
 </project>

@@ -2,13 +2,12 @@ package ch.csbe.modul226A;
 
 public class Konto {
     private double saldo;
-    private double zinssatz;
-    private double zins;
+    private double zinssatz =0.01;
     private String inhaber;
 
-    public Konto(double zinssatz, String inhaber) {
+    public Konto(double zinssatz, Kunde inhaber) {
         this.zinssatz = zinssatz;
-        this.inhaber = inhaber;
+        this.inhaber = String.valueOf(inhaber);
     }
 
     public double getZinssatz() {
@@ -32,6 +31,7 @@ public class Konto {
     }
 
     public double verzinsen(int days) {
+        double zins=0;
         if (saldo <= 50000.00) {
             zins = saldo * getZinssatz() * days / 365;
             System.out.println(inhaber + ", Ihre Zinsen: " + zins);

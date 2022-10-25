@@ -3,82 +3,64 @@ package ch.csbe.modul226A;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static java.lang.Double.MAX_VALUE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TestKonto {
-    private Konto one = new Konto(1.5, "Mayer");
-    private Konto two = new Konto(1, "Schuerch");
-    private Konto three = new Konto(3.7, "Meier");
+    private Kunde mei = new Kunde("Herr","Rolf", "Meier", 10);
 
-    private Kunde mei = new Kunde("Herr","Rolf", "Meier", 10, "Meier");
-    private Kunde may = new Kunde("Frau","Eva", "Mayer", 12, "Mayer");
-    private Kunde sch = new Kunde("Frau","Helga", "Schuerch", 13, "Schuerch");
+    private Konto one = new Konto(0.01, mei);
 
-
-    @DisplayName("Einzahlung Konto one - Mayer")
+    @DisplayName("Test auf 0")
     @Test
-    void einzahlen() {
-        assertEquals(720.50, one.einzahlen(720.50));
-    }
+    void Null() {
+        assertEquals(0, one.einzahlen(0));
 
-
-    @DisplayName("Verzinsen Konto one - Mayer")
-    @Test
-    void verzinsen() {
-        one.setSaldo(720.50);
-        assertEquals(2220.719178082192, one.verzinsen(750));
+        assertEquals(0, one.verzinsen(365));
     }
 
 //_________________________________________________________________________________________
 
-    @DisplayName("Einzahlung Konto two - Schuerch")
+    @DisplayName("Testen Grenzwerte")
     @Test
-    void einzahlenTwo() {
-        assertEquals(1250037.35, two.einzahlen(1250037.35));
+    void Grenzwerte() {
+        assertEquals(50000, one.einzahlen(50000));
+
+        assertEquals(500, one.verzinsen(365));
+
+        //----------------------------------------------------//
+        one.setSaldo(0);
+        assertEquals(50001, one.einzahlen(50001));
+
+        assertEquals(250.005, one.verzinsen(365));
+
+        //----------------------------------------------------//
+        one.setSaldo(0);
+        assertEquals(49999, one.einzahlen(49999));
+
+        assertEquals(499.99 , one.verzinsen(365));
+        //----------------------------------------------------//
+        one.setSaldo(0);
+        assertEquals(499999, one.einzahlen(499999));
+
+        assertEquals(2499.995 , one.verzinsen(365));
+        //----------------------------------------------------//
+        one.setSaldo(0);
+        assertEquals(500000, one.einzahlen(500000));
+
+        assertEquals(0 , one.verzinsen(365));
+        //----------------------------------------------------//
+        one.setSaldo(0);
+        assertEquals(500001, one.einzahlen(500001));
+
+        assertEquals(0 , one.verzinsen(365));
     }
 
-
-    @DisplayName("Verzinsen Konto two")
-    @Test
-    void verzinsenTwo() {
-        two.setSaldo(1250037.35);
-        assertEquals(0, two.verzinsen(180));
+    void Maximal() {
+        one.setSaldo(0);
+        one.einzahlen(MAX_VALUE);
+        assertEquals(0, one.verzinsen(365));
     }
-
-
-    //_________________________________________________________________________________
-
-    @DisplayName("Einzahlung Konto three - Meier")
-    @Test
-    void einzahlenThree() {
-        assertEquals(500.75, three.einzahlen(500.75));
-    }
-
-
-    @DisplayName("Verzinsen Konto three - Meier")
-    @Test
-    void verzinsenThree() {
-        three.setSaldo(500.75);
-        assertEquals(1852.775, three.verzinsen(365));
-        System.out.println("Konto three Ihr neuer Saldo: " + three.getSaldo());
-    }
-
-    void einzahlenThreeA() {
-        assertEquals(2766.675, three.einzahlen(413.15));
-    }
-
-
-    @DisplayName("Verzinsen Konto three - Meier")
-    @Test
-    void verzinsenThreeA() {
-        three.setSaldo(2766.675);
-        assertEquals(3365.489589041096, three.verzinsen(120));
-        System.out.println("Konto three Ihr neuer Saldo: " + three.getSaldo());
-    }
-
-    // Instanzvariablen in Klasse Konto können nicht von hier direkt bearbeitet werden, da sie private gesetzt sind.
-
-
 }
 
