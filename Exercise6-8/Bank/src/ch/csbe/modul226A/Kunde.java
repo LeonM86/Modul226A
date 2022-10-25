@@ -1,7 +1,5 @@
 package ch.csbe.modul226A;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Kunde {
    private String gender;
